@@ -49,4 +49,9 @@ class LoginController extends Controller
         $this->redirectTo = route('home');
         return $this->redirectTo;
     }
+
+    // public function username()
+    // {
+    //     return 'username';
+    // }
 }
