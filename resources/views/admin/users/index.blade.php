@@ -1,4 +1,4 @@
-{{-- @extends('layouts.app')
+@extends('layouts.app')
 
 @section('content')
 <div class="container">
@@ -47,53 +47,5 @@
         </div>
     </div>
 </div>
-@endsection --}}
+@endsection
 
-{{-- 
-@extends('layouts.app')
-
-@section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Servers') }}</div>
-
-                <div class="card-body">
-                  
-                   <table class="table">
-                    <thead>
-                        <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">Title</th>
-                        <th scope="col">Services</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                     @foreach ($servers as $server)
-                        <tr>
-                        <th scope="row">{{$server->id}}</th>
-                        <td>{{$server->title}}</td>
-                        <td>{{$server->services}}</td>
-                        <td>
-                            @can('edit-server')
-                            <a href="{{ route('admin.user.edit', $server->id) }}"><button type="button" class="btn btn-primary float-left">Edit</button></a>
-                            @endcan
-                            @can('delete-users')
-                            <form action="{{ route('admin.user.destroy', $server) }}" method="POST" class="float-left">
-                            @csrf
-                            {{ method_field('DELETE') }}
-                            <button type="submit" class="btn btn-danger" >Delete</button>
-                            </form>
-                            @endcan
-                        </td>
-                        </tr>
-                        @endforeach
-                    </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-@endsection --}}
